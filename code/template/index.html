@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{user["nickname"]}}的个人主页</title>
+</head>
+<body>
+    <img src="{{user['headimgurl']}}" alt="头像">
+    <table>
+        <tr>
+            <th>openid</th>
+            <td>{{user["openid"]}}</td>
+        </tr>
+        <tr>
+            <th>昵称</th>
+            <td>{{user["nickname"]}}</td>
+        </tr>
+        <tr>
+            <th>性别</th>
+            <td>
+                {% if 1 == user["sex"] %}
+                    男
+                {% elif 2 == user["sex"] %}
+                    女
+                {% else %}
+                    未知
+                {% end if %}
+            </td>
+        </tr>
+        <tr>
+            <th>省份</th>
+            <td>{{user["city"]}}</td>
+        </tr>
+        <tr>
+            <th>国家</th>
+            <td>{{user["country"]}}</td>
+        </tr>
+    </table>
+</body>
+</html>
